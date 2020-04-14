@@ -12,25 +12,25 @@ INCPATH=-I../include
 all: lglayout lglbreakup lglrebuild lglfileconvert
 
 lglayout: $(OBJECTS)
-        $(CPP) -o lglayout $(OBJECTS) $(LIBPATH) $(LIBS)
+	$(CPP) -o lglayout $(OBJECTS) $(LIBPATH) $(LIBS)
 
 lglbreakup: lglbreakup.o
-        $(CPP) -o lglbreakup lglbreakup.o $(LIBPATH) $(LIBS)
+	$(CPP) -o lglbreakup lglbreakup.o $(LIBPATH) $(LIBS)
 
 lglrebuild: lglrebuild.o calcFuncs.o
-        $(CPP) -o lglrebuild lglrebuild.o calcFuncs.o $(LIBPATH) $(LIBS)
+	$(CPP) -o lglrebuild lglrebuild.o calcFuncs.o $(LIBPATH) $(LIBS)
 
 lglfileconvert: lglfileconvert.o
-        $(CPP) -o lglfileconvert lglfileconvert.o $(LIBPATH) $(LIBS)
+	$(CPP) -o lglfileconvert lglfileconvert.o $(LIBPATH) $(LIBS)
 
 install:
-        mv -f lglrebuild lglbreakup lglayout lglfileconvert ../bin/.
+	mv -f lglrebuild lglbreakup lglayout lglfileconvert ../bin/.
 
 .C.o:
-        $(CPP) $(INCPATH) -c $(CPP_FLAGS) $<
+	$(CPP) $(INCPATH) -c $(CPP_FLAGS) $<
 
 clean:
-        rm -f *.o
+	rm -f *.o
 
 tidy:
-        rm -f *.o core lglayout lglbreakup lglrebuild lglfileconvert
+	rm -f *.o core lglayout lglbreakup lglrebuild lglfileconvert
