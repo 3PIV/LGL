@@ -107,7 +107,7 @@ outputmst = '1'
 # This will only make a difference for graphs having several
 # thousands of edges and with the threadcount == processor count
 # lglayout will cap this value to the processor count.
-threadcount = '1'
+threadcount = 'processor count'
 
 # The dimension of the layout you want. Can only be '2' or '3'
 dimension = '2'
